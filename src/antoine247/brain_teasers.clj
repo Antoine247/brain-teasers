@@ -38,3 +38,23 @@
 ;; un NaN "Not a Number" es una expresion numerica de java para representar un numero que no es un numero, que no se puede calcular
 (/ 0.0 0.0)
 ;;=>##NaN
+
+(true? true) ;;=> true
+(true? {:sky-is-blue "a"}) ;;=> false
+(false? false) ;;=> true
+(false? nil) ;;=> false
+(false? `()) ;;=> false
+(false? 0) ;;=> false
+
+;; logical true o truthiness, significa que todos los valores que no sean false o nil son true, justamentre true? revisa que el valor recibido
+;; exactamentre el Boolean true pero si lo metes en una funcion que evalue truthiness como and, la keyword va a ser true
+
+(and)
+;;=> true
+(every? odd? [])
+;;=> true
+(or)
+;;=> nil
+
+;; Vacuous true, si una funcion devuelve true hasta qye encuentre uno falseo, si no le pasas ningun valor falso por defecto devuelve tue
+
